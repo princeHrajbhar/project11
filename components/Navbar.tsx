@@ -44,7 +44,7 @@ export default function Navbar() {
       </div>
 
       {/* Menu Items */}
-      <div className="flex items-center gap-10">
+      <div className="hidden md:flex items-center gap-10">
         <a
           href="#"
           className="text-[#222222] text-[16px] font-semibold flex items-center gap-1"
@@ -65,8 +65,18 @@ export default function Navbar() {
         </a>
       </div>
 
+      {/* Mobile Menu Button (visible on small screens) */}
+      <div className="md:hidden flex items-center">
+        <button
+          className="text-[#222222] text-[20px] font-semibold"
+          onClick={() => alert("Mobile menu clicked")}
+        >
+          ☰
+        </button>
+      </div>
+
       {/* Login Button (Gray color) */}
-      <button className="bg-gray-400 text-white px-6 py-2 rounded-lg font-semibold hover:bg-gray-600 transition-colors">
+      <button className="bg-gray-500 text-white px-6 py-2 rounded-lg font-semibold hover:bg-gray-600 transition-colors">
         Login
       </button>
     </nav>
