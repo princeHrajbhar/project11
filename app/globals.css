@@ -6,3 +6,74 @@
 .clip-inclined-left {
   clip-path: polygon(20% 0%, 100% 0%, 100% 100%, 0% 100%);
 }
+
+
+/* Sliding Animation for Heading */
+@keyframes slideIn {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.animate-slide-in {
+  animation: slideIn 1.5s ease-out forwards;
+}
+
+/* Typing Effect for Paragraph */
+@keyframes typing-para {
+  0% { width: 0; }
+  100% { width: 100%; }
+}
+
+.animate-typing-para {
+  overflow: hidden;
+  white-space: nowrap;
+  width: 0;
+  animation: typing-para 4s steps(50) 1s forwards;
+}
+
+/* Fade-In Effect for Image */
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.animate-fade-in {
+  animation: fadeIn 3s ease-in-out forwards;
+}
+
+
+/* Slide-In Animation */
+@keyframes slideIn {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.animate-slide-in {
+  animation: slideIn 1.2s ease-out forwards;
+}
+
+/* Fade-In Animation */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 1.5s ease-in-out forwards;
+}

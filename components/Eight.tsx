@@ -15,26 +15,26 @@ export default function BackgroundPage() {
       />
 
       {/* Logo at Top Left */}
-      <div className="absolute top-5 left-5">
+      <div className="absolute top-5 left-5 sm:top-8 sm:left-8 md:top-10 md:left-10">
         <Image src="/logo.png" alt="Logo" width={100} height={50} />
       </div>
 
       {/* Centered Text */}
-      <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6 text-white">
+      <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6 sm:px-12 md:px-24 text-white">
         {/* All Text as Headings (42px, Bold, Roboto Condensed) */}
-        <h1 className="text-[42px] font-bold tracking-[-0.02em] font-['Roboto_Condensed'] uppercase leading-tight">
+        <h1 className="text-[32px] sm:text-[36px] md:text-[42px] font-bold tracking-[-0.02em] font-['Roboto_Condensed'] uppercase leading-tight">
           dolor sit amet consectetur.
         </h1>
 
-        <h1 className="text-[42px] font-bold tracking-[-0.02em] font-['Roboto_Condensed'] uppercase leading-tight mt-2">
+        <h1 className="text-[32px] sm:text-[36px] md:text-[42px] font-bold tracking-[-0.02em] font-['Roboto_Condensed'] uppercase leading-tight mt-2">
           quis adipiscing purus egestas aliquam viverra mi.
         </h1>
 
-        <h1 className="text-[42px] font-bold tracking-[-0.02em] font-['Roboto_Condensed'] uppercase leading-tight mt-2">
+        <h1 className="text-[32px] sm:text-[36px] md:text-[42px] font-bold tracking-[-0.02em] font-['Roboto_Condensed'] uppercase leading-tight mt-2">
           dolor sit amet consectetur.
         </h1>
 
-        <h1 className="text-[42px] font-bold tracking-[-0.02em] font-['Roboto_Condensed'] uppercase leading-tight mt-2">
+        <h1 className="text-[32px] sm:text-[36px] md:text-[42px] font-bold tracking-[-0.02em] font-['Roboto_Condensed'] uppercase leading-tight mt-2">
           quis adipiscing
         </h1>
       </div>

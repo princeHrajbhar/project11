@@ -12,22 +12,37 @@ const inter = Inter({
   subsets: ['latin'],
 });
 
+// Function to break text into 8 words per line
+const breakTextIntoLines = (text: string, wordsPerLine: number) => {
+  const words = text.split(' ');
+  const lines = [];
+  for (let i = 0; i < words.length; i += wordsPerLine) {
+    lines.push(words.slice(i, i + wordsPerLine).join(' '));
+  }
+  return lines;
+};
+
 export default function Home() {
   return (
-    <div className="flex min-h-screen">
+    <div className="flex min-h-screen flex-col md:flex-row">
       {/* Left Half */}
-      <div className="w-1/2 flex flex-col justify-center items-start pl-16 pr-8 space-y-6">
-        {/* Heading */}
-        <h1 className={`text-[42px] tracking-[-2%] font-bold ${robotoCondensed.className} text-[#222222]`}>
+      <div className="w-full md:w-1/2 flex flex-col justify-center items-start px-8 py-16 space-y-6">
+        {/* Heading with Sliding Animation */}
+        <h1 className={`text-[42px] tracking-[-2%] font-bold ${robotoCondensed.className} text-[#222222] animate-slide-in`}>
           Lorem ipsum dolor sit amet
         </h1>
 
-        {/* Normal Paragraph */}
-        <p className={`text-[20px] tracking-[-2%] ${inter.className} text-[#222222]`}>
-          Lorem ipsum dolor sit amet consectetur. Enim netus cras congue quis elit sociis. Sed mi
-          rhoncus id habitant. In urna tellus nisi platea morbi libero imperdiet neque. Justo
-          suspendisse tristique posuere quis eget viverra. Nunc euismod ultrices etiam nulla
-          habitasse.
+        {/* Paragraph with Typing Effect */}
+        <p className={`text-[20px] tracking-[-2%] ${inter.className} text-[#222222] animate-typing-para`}>
+          {breakTextIntoLines(
+            "Lorem ipsum dolor sit amet consectetur. Enim netus cras congue quis elit sociis. Sed mi rhoncus id habitant. In urna tellus nisi platea morbi libero imperdiet neque. Justo suspendisse tristique posuere quis eget viverra. Nunc euismod ultrices etiam nulla habitasse.",
+            8
+          ).map((line, index) => (
+            <span key={index}>
+              {line}
+              <br />
+            </span>
+          ))}
         </p>
 
         {/* Input and Button Section */}
@@ -67,9 +82,9 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Right Half - Inclined Left Side Image */}
-      <div className="w-1/2 h-screen relative overflow-hidden">
-        <div className="absolute inset-0 clip-inclined-left">
+      {/* Right Half - Inclined Left Side Image with Fade-In */}
+      <div className="w-full md:w-1/2 h-screen relative overflow-hidden">
+        <div className="absolute inset-0 clip-inclined-left opacity-0 animate-fade-in">
           <Image
             src="/bike.png" // Replace with your image path
             alt="Bike Image"

@@ -24,18 +24,18 @@ export default function RequestQuote() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-gray-50 px-6">
+    <div className="min-h-screen flex flex-col items-center justify-center bg-gray-50 px-4 sm:px-6 lg:px-8">
       {/* Heading */}
-      <h1 className="text-[42px] font-bold tracking-[-0.02em] font-['Roboto_Condensed'] uppercase text-center text-gray-800 mb-8">
+      <h1 className="text-[32px] sm:text-[36px] md:text-[42px] font-bold tracking-[-0.02em] font-['Roboto_Condensed'] uppercase text-center text-gray-800 mb-8">
         REQUEST A QUOTE
       </h1>
 
       {/* Form */}
       <form onSubmit={handleSubmit} className="w-full max-w-3xl">
-        <div className="grid grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           {/* Name */}
           <div>
-            <label className="block text-gray-700 text-[20px] font-['Inter']">Name</label>
+            <label className="block text-gray-700 text-[16px] sm:text-[20px] font-['Inter']">Name</label>
             <input
               type="text"
               name="name"
@@ -48,7 +48,7 @@ export default function RequestQuote() {
 
           {/* Email */}
           <div>
-            <label className="block text-gray-700 text-[20px] font-['Inter']">Email</label>
+            <label className="block text-gray-700 text-[16px] sm:text-[20px] font-['Inter']">Email</label>
             <input
               type="email"
               name="email"
@@ -61,7 +61,7 @@ export default function RequestQuote() {
 
           {/* Phone */}
           <div>
-            <label className="block text-gray-700 text-[20px] font-['Inter']">Phone Number</label>
+            <label className="block text-gray-700 text-[16px] sm:text-[20px] font-['Inter']">Phone Number</label>
             <input
               type="tel"
               name="phone"
@@ -74,7 +74,7 @@ export default function RequestQuote() {
 
           {/* Time Frame */}
           <div>
-            <label className="block text-gray-700 text-[20px] font-['Inter']">Time Frame</label>
+            <label className="block text-gray-700 text-[16px] sm:text-[20px] font-['Inter']">Time Frame</label>
             <select
               name="timeframe"
               value={formData.timeframe}
@@ -91,7 +91,7 @@ export default function RequestQuote() {
 
           {/* Size (Dropdown) */}
           <div>
-            <label className="block text-gray-700 text-[20px] font-['Inter']">Size</label>
+            <label className="block text-gray-700 text-[16px] sm:text-[20px] font-['Inter']">Size</label>
             <select
               name="size"
               value={formData.size}
@@ -109,7 +109,7 @@ export default function RequestQuote() {
 
           {/* Quantity */}
           <div>
-            <label className="block text-gray-700 text-[20px] font-['Inter']">Quantity</label>
+            <label className="block text-gray-700 text-[16px] sm:text-[20px] font-['Inter']">Quantity</label>
             <input
               type="number"
               name="quantity"
@@ -123,7 +123,7 @@ export default function RequestQuote() {
 
         {/* Project Description (Full Width with Placeholder) */}
         <div className="mt-6">
-          <label className="block text-gray-700 text-[20px] font-['Inter']">Please Describe Your Project</label>
+          <label className="block text-gray-700 text-[16px] sm:text-[20px] font-['Inter']">Please Describe Your Project</label>
           <textarea
             name="description"
             value={formData.description}
@@ -151,7 +151,7 @@ export default function RequestQuote() {
         <div className="flex justify-center mt-6">
           <button
             type="submit"
-            className="px-6 py-3 text-white bg-blue-600 flex items-center gap-2 text-[20px] font-semibold rounded-lg transition hover:bg-blue-700"
+            className="px-6 py-3 text-white bg-blue-600 flex items-center gap-2 text-[16px] sm:text-[18px] font-semibold rounded-lg transition hover:bg-blue-700"
           >
             Loerum Ipsum <ArrowRight size={20} />
           </button>

@@ -5,12 +5,12 @@ export default function NewPage() {
   return (
     <div className="min-h-screen flex flex-col items-center bg-white p-8">
       {/* Heading */}
-      <h1 className="text-[42px] font-bold uppercase text-[#222222] text-center tracking-[-0.02em] font-[Roboto Condensed]">
+      <h1 className="text-[32px] sm:text-[36px] md:text-[42px] font-bold uppercase text-[#222222] text-center tracking-[-0.02em] font-[Roboto Condensed]">
         LOREM IPSUM DOLOR SIT AMET
       </h1>
 
       {/* Paragraph */}
-      <p className="text-[18px] text-[#555555] text-center mt-6 max-w-[800px]">
+      <p className="text-[16px] sm:text-[18px] text-[#555555] text-center mt-6 max-w-[800px]">
         Aliquet sed nulla tincidunt pulvinar sed fames sit facilisis dictumst.
         Ornare faucibus quis velit fringilla aliquam ultricies. Malesuada ut
         aliquam at ac est nisi, interdum etiam dignissim. Sed ut vestibulum eget
@@ -32,17 +32,17 @@ export default function NewPage() {
 
         {/* Right Section - Card */}
         <div className="lg:w-[55%] bg-white shadow-lg p-8 relative z-10 -mt-[50px] lg:-ml-[10%]">
-          <h2 className="text-[24px] font-semibold text-[#222222] font-[Inter]">
+          <h2 className="text-[20px] sm:text-[22px] md:text-[24px] font-semibold text-[#222222] font-[Inter]">
             Artist & Investor
           </h2>
-          <p className="text-[16px] text-[#555555] mt-4">
+          <p className="text-[14px] sm:text-[16px] text-[#555555] mt-4">
             Enim sagittis, sit porttitor morbi lobortis amet, libero adipiscing
             auctor. Malesuada tristique libero, id netus tincidunt. Egestas ac
             arcu amet nisl quis est ...
           </p>
           <a
             href="#"
-            className="text-[#1959AC] text-[16px] font-semibold mt-6 flex items-center gap-2"
+            className="text-[#1959AC] text-[14px] sm:text-[16px] font-semibold mt-6 flex items-center gap-2"
           >
             Read Full Story <ArrowRight size={18} />
           </a>
