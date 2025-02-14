@@ -14,13 +14,100 @@ export default function RequestQuote() {
     description: "",
   });
 
+  const [errors, setErrors] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    timeframe: "",
+    size: "",
+    quantity: "",
+    description: "",
+  });
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+  const validateForm = () => {
+    const formErrors = { ...errors };  // Changed from 'let' to 'const'
+    let isValid = true;
+  
+    // Check name
+    if (!formData.name) {
+      formErrors.name = "Name is required.";
+      isValid = false;
+    } else {
+      formErrors.name = "";
+    }
+  
+    // Check email
+    if (!formData.email) {
+      formErrors.email = "Email is required.";
+      isValid = false;
+    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+      formErrors.email = "Email is invalid.";
+      isValid = false;
+    } else {
+      formErrors.email = "";
+    }
+  
+    // Check phone number
+    if (!formData.phone) {
+      formErrors.phone = "Phone number is required.";
+      isValid = false;
+    } else if (!/^\d{10}$/.test(formData.phone)) {
+      formErrors.phone = "Phone number must be 10 digits.";
+      isValid = false;
+    } else {
+      formErrors.phone = "";
+    }
+  
+    // Check timeframe
+    if (!formData.timeframe) {
+      formErrors.timeframe = "Time frame is required.";
+      isValid = false;
+    } else {
+      formErrors.timeframe = "";
+    }
+  
+    // Check size
+    if (!formData.size) {
+      formErrors.size = "Size is required.";
+      isValid = false;
+    } else {
+      formErrors.size = "";
+    }
+  
+    // Check quantity
+    if (!formData.quantity) {
+      formErrors.quantity = "Quantity is required.";
+      isValid = false;
+    } else if (parseInt(formData.quantity) <= 0) {
+      formErrors.quantity = "Quantity must be greater than 0.";
+      isValid = false;
+    } else {
+      formErrors.quantity = "";
+    }
+  
+    // Check description
+    if (!formData.description) {
+      formErrors.description = "Project description is required.";
+      isValid = false;
+    } else {
+      formErrors.description = "";
+    }
+  
+    setErrors(formErrors);
+    return isValid;
+  };
+  
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form Submitted", formData);
+    if (validateForm()) {
+      console.log("Form Submitted", formData);
+      // Proceed with form submission logic here
+    }
   };
 
   return (
@@ -44,6 +131,7 @@ export default function RequestQuote() {
               className="w-full mt-2 p-3 border rounded-lg focus:ring focus:ring-blue-300 bg-[#eeece9]"
               required
             />
+            {errors.name && <p className="text-red-600 text-sm">{errors.name}</p>}
           </div>
 
           {/* Email */}
@@ -57,6 +145,7 @@ export default function RequestQuote() {
               className="w-full mt-2 p-3 border rounded-lg focus:ring focus:ring-blue-300 bg-[#eeece9]"
               required
             />
+            {errors.email && <p className="text-red-600 text-sm">{errors.email}</p>}
           </div>
 
           {/* Phone */}
@@ -70,6 +159,7 @@ export default function RequestQuote() {
               className="w-full mt-2 p-3 border rounded-lg focus:ring focus:ring-blue-300 bg-[#eeece9]"
               required
             />
+            {errors.phone && <p className="text-red-600 text-sm">{errors.phone}</p>}
           </div>
 
           {/* Time Frame */}
@@ -87,9 +177,10 @@ export default function RequestQuote() {
               <option value="1 month">1 Month</option>
               <option value="More than 1 month">More than 1 Month</option>
             </select>
+            {errors.timeframe && <p className="text-red-600 text-sm">{errors.timeframe}</p>}
           </div>
 
-          {/* Size (Dropdown) */}
+          {/* Size */}
           <div>
             <label className="block text-gray-700 text-[16px] sm:text-[20px] font-['Inter']">Size</label>
             <select
@@ -105,6 +196,7 @@ export default function RequestQuote() {
               <option value="Large">Large</option>
               <option value="Custom">Custom</option>
             </select>
+            {errors.size && <p className="text-red-600 text-sm">{errors.size}</p>}
           </div>
 
           {/* Quantity */}
@@ -118,10 +210,11 @@ export default function RequestQuote() {
               className="w-full mt-2 p-3 border rounded-lg focus:ring focus:ring-blue-300 bg-[#eeece9]"
               required
             />
+            {errors.quantity && <p className="text-red-600 text-sm">{errors.quantity}</p>}
           </div>
         </div>
 
-        {/* Project Description (Full Width with Placeholder) */}
+        {/* Project Description */}
         <div className="mt-6">
           <label className="block text-gray-700 text-[16px] sm:text-[20px] font-['Inter']">Please Describe Your Project</label>
           <textarea
@@ -133,6 +226,7 @@ export default function RequestQuote() {
             className="w-full mt-2 p-3 border rounded-lg focus:ring focus:ring-blue-300 bg-[#eeece9]"
             required
           />
+          {errors.description && <p className="text-red-600 text-sm">{errors.description}</p>}
         </div>
 
         {/* Terms & Conditions */}
