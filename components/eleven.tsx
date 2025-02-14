@@ -42,39 +42,39 @@ export default function NewPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#0546D2] text-white p-8 relative">
+    <div className="min-h-screen bg-[#0546D2] text-white p-6 sm:p-8 relative flex flex-col items-center">
       {/* Left Section */}
-      <div className="w-full sm:w-1/2">
+      <div className="w-full sm:w-3/4 lg:w-1/2 text-center sm:text-left">
         {/* Subheading */}
-        <p className="text-[20px] font-semibold mb-4">Join other Sun harvesters</p>
+        <p className="text-[18px] sm:text-[20px] font-semibold mb-4">Join other Sun harvesters</p>
 
         {/* Heading and Button container */}
-        <div className="flex items-center mb-6 justify-between relative">
-          <h1 className="text-[32px] sm:text-[42px] font-bold uppercase whitespace-nowrap">
+        <div className="mb-6 relative">
+          <h1 className="text-[28px] sm:text-[36px] lg:text-[42px] font-bold uppercase">
             LOREM IPSUM DOLOR SIT AMET
           </h1>
         </div>
 
         {/* Paragraph */}
-        <p className="text-[16px] sm:text-[18px] mb-8">
+        <p className="text-[14px] sm:text-[16px] mb-6 sm:mb-8">
           Dui euismod iaculis libero, aliquet vitae et elementum porttitor. Eleifend mi tristique condimentum congue fusce nunc, donec magnis commodo.
         </p>
       </div>
 
       {/* Card Section */}
-      <div className="relative w-full mt-8">
+      <div className="relative w-full mt-6 sm:mt-8">
         {/* Cards Container */}
         <div
           id="card-container"
-          className="flex overflow-x-auto scrollbar-hide space-x-6 pb-6 mb-12"
+          className="flex overflow-x-auto scrollbar-hide space-x-4 pb-4 sm:pb-6 mb-8 sm:mb-12 px-4"
         >
           {cards.map((card, index) => (
             <div
               key={index}
-              className="flex-shrink-0 bg-white text-[#222222] p-6 rounded-lg shadow-lg w-[280px] sm:w-[300px]"
+              className="flex-shrink-0 bg-white text-[#222222] p-4 sm:p-6 rounded-lg shadow-lg w-[260px] sm:w-[300px]"
             >
               {/* Icon */}
-              <div className="w-12 h-12 mb-4">
+              <div className="w-12 h-12 mb-3">
                 <Image
                   src={card.icon}
                   alt="Icon"
@@ -85,16 +85,16 @@ export default function NewPage() {
               </div>
 
               {/* Content */}
-              <p className="text-[14px] sm:text-[16px] mb-6">{card.content}</p>
+              <p className="text-[12px] sm:text-[14px] mb-4 sm:mb-6">{card.content}</p>
 
               {/* Profile */}
               <div className="flex items-center">
                 <Image
                   src={card.profile}
                   alt="Profile"
-                  width={40}
-                  height={40}
-                  className="rounded-full mr-4"
+                  width={36}
+                  height={36}
+                  className="rounded-full mr-3"
                 />
                 <p className="text-[14px] sm:text-[16px] font-semibold">{card.name}</p>
               </div>
@@ -103,26 +103,26 @@ export default function NewPage() {
         </div>
       </div>
 
-      {/* Learn More Button */}
-      <button className="bg-white text-[#0546D2] px-6 py-2 rounded-lg font-semibold hover:bg-gray-100 transition-colors absolute top-8 right-8 z-10">
-        Learn More
-      </button>
-
       {/* Navigation Arrows */}
-      <div className="absolute bottom-8 left-8 flex items-center space-x-4">
+      <div className="flex items-center space-x-3 sm:space-x-4">
         <button
           onClick={() => handleScroll("left")}
-          className="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-lg hover:bg-gray-100 transition-colors opacity-75"
+          className="w-10 h-10 sm:w-12 sm:h-12 bg-white rounded-full flex items-center justify-center shadow-lg hover:bg-gray-100 transition-colors"
         >
-          <span className="text-[#0546D2] text-2xl">←</span>
+          <span className="text-[#0546D2] text-xl sm:text-2xl">←</span>
         </button>
         <button
           onClick={() => handleScroll("right")}
-          className="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-lg hover:bg-gray-100 transition-colors opacity-75"
+          className="w-10 h-10 sm:w-12 sm:h-12 bg-white rounded-full flex items-center justify-center shadow-lg hover:bg-gray-100 transition-colors"
         >
-          <span className="text-[#0546D2] text-2xl">→</span>
+          <span className="text-[#0546D2] text-xl sm:text-2xl">→</span>
         </button>
       </div>
+
+      {/* Learn More Button */}
+      <button className="bg-white text-[#0546D2] px-5 py-2 sm:px-6 sm:py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors mt-6 sm:mt-8">
+        Learn More
+      </button>
 
       {/* Hide the scrollbar completely in Chrome/Safari */}
       <style jsx>{`
